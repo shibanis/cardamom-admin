@@ -2,9 +2,22 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Define types for stock and sales items
+type StockItem = {
+  id: number;
+  source: string;
+  quantity: number;
+};
+
+type SalesItem = {
+  id: number;
+  customer: string;
+  total: number;
+};
+
 export default function DashboardPage() {
-  const [stock, setStock] = useState([]);
-  const [sales, setSales] = useState([]);
+  const [stock, setStock] = useState<StockItem[]>([]);  // Specify type for stock
+  const [sales, setSales] = useState<SalesItem[]>([]);  // Specify type for sales
   const router = useRouter();
 
   useEffect(() => {
