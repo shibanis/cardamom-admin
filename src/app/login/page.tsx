@@ -24,12 +24,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md">
+    <div className="flex justify-center items-center h-screen bg-gray-900">
+      <form onSubmit={handleLogin} className="bg-gray-900 p-6 rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Login</h1>
         <input type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} className="border p-2 w-full mb-2" required />
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border p-2 w-full mb-2" required />
-        <select value={gstAccount} onChange={(e) => setGstAccount(e.target.value)} className="border p-2 w-full mb-2">
+        <select value={gstAccount} onChange={(e) => setGstAccount(e.target.value)} className="border p-2 w-full mb-8 mt-8">
           <option value="GST1">GST Account 1</option>
           <option value="GST2">GST Account 2</option>
         </select>

@@ -71,12 +71,12 @@ export default function DashboardPage() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+      <div className="flex-1 bg-gray-900 p-6 overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
 
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">📦 Stock Overview</h2>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="bg-gray-900 p-4 rounded shadow">
             {stock.length === 0 ? (
               <p>No stock data available.</p>
             ) : (
@@ -91,7 +91,7 @@ export default function DashboardPage() {
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">🧾 Recent Sales</h2>
-          <div className="bg-white p-4 rounded shadow">
+          <div className="bg-gray-900 p-4 rounded shadow">
             {sales.length === 0 ? (
               <p>No sales data available.</p>
             ) : (
