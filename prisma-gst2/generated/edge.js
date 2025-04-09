@@ -32,12 +32,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.5.0
- * Query Engine version: 173f8d54f8d52e692c7e27e72a88314ec7aeff60
+ * Prisma Client JS version: 6.6.0
+ * Query Engine version: f676762280b54cd07c770017ed3711ddde35f37a
  */
 Prisma.prismaVersion = {
-  client: "6.5.0",
-  engine: "173f8d54f8d52e692c7e27e72a88314ec7aeff60"
+  client: "6.6.0",
+  engine: "f676762280b54cd07c770017ed3711ddde35f37a"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -152,6 +152,10 @@ const config = {
         "fromEnvVar": null,
         "value": "darwin-arm64",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -163,8 +167,8 @@ const config = {
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "..",
-  "clientVersion": "6.5.0",
-  "engineVersion": "173f8d54f8d52e692c7e27e72a88314ec7aeff60",
+  "clientVersion": "6.6.0",
+  "engineVersion": "f676762280b54cd07c770017ed3711ddde35f37a",
   "datasourceNames": [
     "db"
   ],
@@ -173,12 +177,12 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL_GST2",
-        "value": null
+        "value": "postgresql://postgres:yRjBSJCiTQyiRWYTjHWWOpvucftxlDIp@tramway.proxy.rlwy.net:15494/railway"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL_GST2\")\n}\n\nmodel User {\n  id       String @id @default(uuid())\n  name     String @unique\n  password String\n}\n\nmodel Stock {\n  id            String   @id @default(uuid())\n  source        String // Auction name or supplier\n  grade         String\n  quantity      Float\n  purchasePrice Float\n  createdAt     DateTime @default(now())\n}\n\nmodel Sale {\n  id            String   @id @default(uuid())\n  customer      String\n  quantity      Float\n  salePrice     Float\n  total         Float\n  paymentStatus String\n  createdAt     DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "ccc1e5352ae91cecf450f37211159ae7cd9337f98f030234783021729bfba7a8",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n  output        = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL_GST2\")\n}\n\nmodel User {\n  id       String @id @default(uuid())\n  name     String @unique\n  password String\n}\n\nmodel Stock {\n  id            String   @id @default(uuid())\n  source        String // Auction name or supplier\n  grade         String\n  quantity      Float\n  purchasePrice Float\n  createdAt     DateTime @default(now())\n}\n\nmodel Sale {\n  id            String   @id @default(uuid())\n  customer      String\n  quantity      Float\n  salePrice     Float\n  total         Float\n  paymentStatus String\n  createdAt     DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "b4d088f0f7a4a251a7238e59a398f7a3e06b0896ecdaaa4c4f8f3a3c167ba18e",
   "copyEngine": true
 }
 config.dirname = '/'
